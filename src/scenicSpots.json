@@ -1,0 +1,160 @@
+{  
+  "常州市": {  
+      "adcode": "320400", 
+      "longitude": 119.616576,
+      "latitude": 31.587123,
+      "scenic_spots": [  
+          {
+            "name": "江苏省常州市环球恐龙城休闲旅游区",
+            "level": "5A",
+            "longitude": 120.0060601,
+            "latitude": 31.82814557
+          },
+          {
+            "name": "江苏省常州市天目湖景区",
+            "level": "5A",
+            "longitude": 119.4522109,
+            "latitude": 31.32434591
+          },
+          {
+            "name": "江苏省常州市中国春秋淹城旅游区",
+            "level": "5A",
+            "longitude": 119.930306,
+            "latitude": 31.70814696
+          },
+          {
+            "name": "江苏省常州市天宁禅寺",
+            "level": "4A",
+            "longitude":119.969753,
+            "latitude":  31.774513
+          },
+          {
+            "name": "江苏省常州市红梅公园",
+            "level": "4A",
+            "longitude":119.9801236,
+            "latitude": 31.78082444 
+          },	
+          {
+            "name": "江苏省常州市博物馆",
+            "level": "4A",
+            "longitude": 119.9781407,
+            "latitude": 31.81489624
+          },
+          {
+            "name": "江苏省常州市青枫公园",
+            "level": "4A",
+            "longitude": 119.9054979,
+            "latitude": 31.80361301 
+          },
+          {
+            "name": "江苏省常州古运河南大街文化旅游区",
+            "level": "4A",
+            "longitude":119.951746,
+            "latitude":31.776439  
+          },
+          {
+            "name": "江苏省常州市环球动漫嬉戏谷景区",
+            "level": "4A",
+            "longitude": 120.054463,
+            "latitude": 31.50637693
+          },
+          {
+            "name": "江苏省常州市中华孝道园景区",
+            "level": "4A",
+            "longitude": 120.0772418,
+            "latitude": 31.48273933 
+          },		
+          {
+            "name": "江苏省常州溧阳市新四军江南指挥部纪念馆",
+            "level": "4A",
+            "longitude": 119.348987,
+            "latitude": 31.51347089 
+          },
+          {
+            "name": "江苏省常州市东方盐湖城▪道天下景区",
+            "level": "4A",
+            "longitude":119.3465964,
+            "latitude": 31.76583747 
+          },
+          {
+            "name": "江苏省常州市花谷奇缘景区",
+            "level": "4A",
+            "longitude": 119.3287815,
+            "latitude": 31.74109851 
+          } 
+      ]  
+  },  
+  "连云港市": {  
+      "adcode": "320700", 
+      "longitude": 119.252397,
+      "latitude": 34.48284,
+      "scenic_spots": [  
+          {
+            "name": "江苏省连云港市花果山景区",
+            "level": "5A",
+            "longitude": 119.2809829,
+            "latitude": 34.64722556
+          },
+          {
+            "name": "江苏省连云港市连岛景区",
+            "level": "4A",
+            "longitude":119.46992 ,
+            "latitude": 34.75948
+          },
+          {
+            "name": "江苏省连云港市孔望山景区",
+            "level": "4A",
+            "longitude": 119.174941,
+            "latitude": 34.567005
+          },
+          {
+            "name": "江苏省连云港市渔湾景区",
+            "level": "4A",
+            "longitude": 119.3432445,
+            "latitude": 34.64593018
+          },
+          {
+            "name": "江苏省连云港市东海水晶文化旅游区",
+            "level": "4A",
+            "longitude": 118.7842805,
+            "latitude": 34.55818967
+          },
+          {
+            "name": "江苏省连云港市革命纪念馆",
+            "level": "4A",
+            "longitude": 119.2322581,
+            "latitude": 34.59962509
+          },
+          {
+            "name": "江苏省连云港市海上云台山景区",
+            "level": "4A",
+            "longitude":119.434338 ,
+            "latitude": 34.71101199
+          },
+          {
+            "name": "江苏省连云港市二郎神文化遗迹公园",
+            "level": "4A",
+            "longitude": 119.33173,
+            "latitude": 34.13156343
+          },
+            {
+            "name": "江苏省连云港市东海西双湖景区",
+            "level": "4A",
+            "longitude": 118.7209977,
+            "latitude":34.53722963 
+          },
+        {
+            "name": "江苏省连云港市大伊山景区",
+            "level": "4A",
+            "longitude": 119.2444753,
+            "latitude": 34.31906317
+          },
+          {
+            "name": "江苏省连云港市桃花涧景区",
+            "level": "4A",
+            "longitude":119.147293 ,
+            "latitude": 34.548032
+          }
+      ]  
+  }  
+}

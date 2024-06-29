@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>景区查询</title>
+    <meta charset="utf-8" />
+    <script src="./src/vue2.js"></script>
+    <script src="./src/leaflet.js"></script>  
+    <script src="./src/element-ui.js"></script>  
+    <script src="./src/jquery.min.js"></script>
+    <link rel="stylesheet" href="./src/index.css" /> 
+    <link rel="stylesheet" href="./src/leaflet.css" />
+    <link rel="stylesheet" href="./src/element-ui.css">       
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/scenicSpots.json" id="scenicSpotsData" type="application/json"></script> 
+</head>
+<body>
+    <div class="scream" id="app">
+        <div class="header">
+            <div  class="header-left fl">   
+                <div v-if="weatherData">
+                    <p>{{ weatherData.city }}&emsp;{{ weatherData.weather }}&emsp;{{ weatherData.temperature_float }}°C</p>
+                    <p>风力风向：&nbsp;{{ weatherData.winddirection }}&nbsp;{{ weatherData.windpower }}级</p>
+                </div>
+            </div>
+            <div class="header-center fl">
+                <div class="header-title">江苏旅游景区空间分布查询系统</div>
+                <div class="header-img"></div>
+            </div>
+            <div class="header-right fl">
+                <p>{{ date_show }} - {{ week }}</p>
+                <p>{{ time_show }}</p>
+            </div>
+            <div class="header-bottom fl"></div>
+        </div>
+        <div class="main-container">       
+            <div class="left-container">
+                <el-select  v-model="selectedProvince" class="province-select">
+                    <el-option 
+                    v-for="(scenic, index) in provinces" 
+                    :key="index" 
+                    :label="scenic.province"
+                    :value="scenic.province">
+                    </el-option>
+                </el-select>
+                <el-button @click="showScenicSpots" class="showspot-button">显示景点</el-button>
+                <div v-if="scenicSpots.length > 0" class="scenic-spots" >
+                    <el-card v-for="(spot, index) in scenicSpots" :key="index" class="spot-list" @click="locateSpot(spot)">
+                    <h3 class="spot-name" @click="viewSpot(spot)">{{ spot.name }}</h3>
+                    <p>{{ spot.location }}</p>
+                    </el-card>
+                </div>
+            </div>        
+            <div class="div_any_child div_height">
+                <div class="map-container">
+                    <div id="mapid"></div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+    <script type="text/javascript">
+        var map; // 将 map 声明在全局范围
+        function loadMap() {
+            var tileUrl = {
+                "Sat": {
+                    "TIANDITU": "http://{s}.tianditu.gov.cn/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=fb0e32d797229ed58655a2b3eec77aed",
+                    "TIANDITU_L": "http://{s}.tianditu.gov.cn/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=fb0e32d797229ed58655a2b3eec77aed"
+                },
+                "Vect": {
+                    "TIANDITU": "http://{s}.tianditu.gov.cn/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=fb0e32d797229ed58655a2b3eec77aed",
+                    "TIANDITU_L": "http://{s}.tianditu.gov.cn/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=fb0e32d797229ed58655a2b3eec77aed"
+                },
+                "Terr": {
+                    "TIANDITU": "http://{s}.tianditu.gov.cn/ter_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=ter&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=fb0e32d797229ed58655a2b3eec77aed",
+                    "TIANDITU_L": "http://{s}.tianditu.gov.cn/cta_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cta&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=fb0e32d797229ed58655a2b3eec77aed"
+                }
+            };
+        
+            map = L.map('mapid', {
+                center: [34.48284, 119.252397],
+                zoom: 10,
+                layers: [
+                    L.tileLayer(tileUrl.Vect.TIANDITU, { subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"] }),
+                    L.tileLayer(tileUrl.Vect.TIANDITU_L, { subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"] })
+                ],
+                zoomControl: true,
+                attributionControl: false
+            });
+        }
+    </script>
+    <script src="./src/index.js"></script>
+</html>
